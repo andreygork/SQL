@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    testImplementation 'com.codeborne:selenide:6.10.1'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.5'
+    testImplementation 'mysql:mysql-connector-java:8.0.30'
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+}
