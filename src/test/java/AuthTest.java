@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.netology.page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -35,6 +32,7 @@ public class AuthTest {
         var user = getUserInfo();
         var loginPage = new LoginPage();
         loginPage.tripleInvalidPassword(user.getLogin(), getInvalidPass());
+        loginPage.validLogin(user.getLogin(), getInvalidPass());
     }
 
     @AfterEach
